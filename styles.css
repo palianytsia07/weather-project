@@ -1,0 +1,57 @@
+h1 {
+    color: blue;
+  }
+  .card {
+    margin-top: 20px;
+    margin: 20px auto;
+  }
+  .time {
+    color: grey;
+    padding: 0;
+    margin-left: 5pt;
+  }
+  #current-conditions {
+    color: black;
+    font-size: 15pt;
+    padding: 0;
+    margin-left: 5pt;
+    margin-bottom: 0;
+  }
+  
+  .conditions {
+    text-align: right;
+    margin-right: 15px;
+    margin-top: 30px;
+    font-size: 11pt;
+  }
+  
+  button {
+    margin: 10;
+    padding: 0;
+  }
+  .sun {
+    font-size: 30pt;
+  }
+  
+  .float-left {
+    text-align: left;
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 20pt;
+  }
+  .units {
+    font-size: 12pt;
+    position: relative;
+    top: -15px;
+  }
+  .temperature {
+    font-size: 35pt;
+    padding: 0;
+    margin-left: 5pt;
+  }
+  #city {
+    font-size: 30pt;
+    margin-left: 5px;
+    color: black;
+  }
+  
