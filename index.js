@@ -23,7 +23,7 @@ function formatDate(date) {
     return `${day} ${hours}:${minutes}`;
   }
   function showWeather(responce) {
-
+    let iconElement = document.querySelector("#icon");
     celsiusTemp = responce.data.main.temp;
 
     document.querySelector("#city").innerHTML = responce.data.name;
@@ -40,6 +40,11 @@ function formatDate(date) {
     );
     document.querySelector("#current-conditions").innerHTML =
       responce.data.weather[0].main;
+      iconElement.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
+      );
+      iconElement.setAttribute("alt", responce.data.weather[0].description);
   }
   function apiCitySearch(city) {
     let apiKey = "a6351f08b36136455de6d8c91ee0b375";

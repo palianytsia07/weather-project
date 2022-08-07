@@ -52,13 +52,15 @@ h1 {
   }
   .temperature {
     font-size: 35pt;
-    padding: 0;
+    padding: 0 5pt;
+    margin-left: 5pt;
     margin-left: 5pt;
   }
   #city {
     font-size: 30pt;
     margin-left: 5px;
     color: black;
+    margin-top: 5pt;
   }
 
   #GitHub_link {
@@ -78,4 +80,9 @@ h1 {
   .active:hover{
     text-decoration: none;
     color: black;
+}
+img{
+    
+    height: 40pt; 
+    width: 40pt; 
 }
