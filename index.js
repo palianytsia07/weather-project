@@ -23,10 +23,14 @@ function formatDate(date) {
     return `${day} ${hours}:${minutes}`;
   }
   function showWeather(responce) {
+
+    celsiusTemp = responce.data.main.temp;
+
     document.querySelector("#city").innerHTML = responce.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(
-      responce.data.main.temp
+      celsiusTemp
     );
+
     document.querySelector("#feels_like").innerHTML = Math.round(
       responce.data.main.feels_like
     );
@@ -59,11 +63,23 @@ function formatDate(date) {
   }
   
   function getCurrentTemp(event) {
-    console.log("cuurentTemp");
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(displayPosition);
   }
   
+function showFarenheitTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    let fahrenheitTemp = (celsiusTemp*9)/5+32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
   let dateElement = document.querySelector("#date");
   let currentTime = new Date();
   dateElement.innerHTML = formatDate(currentTime);
@@ -73,6 +89,14 @@ function formatDate(date) {
   
   let currentButton = document.querySelector("#current-button");
   currentButton.addEventListener("click", getCurrentTemp);
+  
+  let farenheitLink = document.querySelector("#fahrenheit-link");
+  farenheitLink.addEventListener ("click", showFarenheitTemperature);
+
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener ("click", showCelsiusTemperature);
+
+  let celsiusTemp = null;
   
   apiCitySearch("Kyiv");
   
