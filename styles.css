@@ -44,6 +44,12 @@ h1 {
     position: relative;
     top: -15px;
   }
+
+  .tepreature-unit{
+    font-size: 12pt;
+    top: -15px;
+    text-decoration: none;
+  }
   .temperature {
     font-size: 35pt;
     padding: 0;
@@ -64,3 +70,12 @@ h1 {
    
   }
   
+  .active {
+    color: black;
+    cursor: default;  
+  }
+
+  .active:hover{
+    text-decoration: none;
+    color: black;
+}

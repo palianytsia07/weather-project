@@ -70,6 +70,8 @@ function formatDate(date) {
 function showFarenheitTemperature(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    farenheitLink.classList.add("active");
     let fahrenheitTemp = (celsiusTemp*9)/5+32;
     temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -77,6 +79,8 @@ function showFarenheitTemperature(event){
 function showCelsiusTemperature(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.add("active");
+    farenheitLink.classList.remove("active");
     temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
