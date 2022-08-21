@@ -22,6 +22,32 @@ function formatDate(date) {
   
     return `${day} ${hours}:${minutes}`;
   }
+
+  function displayForecast () {
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Thu", "Fri", "Sat"];
+
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function(day){
+forecastHTML = forecastHTML + `
+    <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>`;
+    })
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+  }
+
   function showWeather(responce) {
     let iconElement = document.querySelector("#icon");
     celsiusTemp = responce.data.main.temp;
@@ -45,7 +71,7 @@ function formatDate(date) {
         `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
       );
       iconElement.setAttribute("alt", responce.data.weather[0].description);
-  }
+    }
   function apiCitySearch(city) {
     let apiKey = "a6351f08b36136455de6d8c91ee0b375";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -106,6 +132,6 @@ function showCelsiusTemperature(event){
   celsiusLink.addEventListener ("click", showCelsiusTemperature);
 
   let celsiusTemp = null;
-  
   apiCitySearch("Kyiv");
+  displayForecast ()
   
