@@ -61,15 +61,13 @@ h1 {
     margin-left: 5px;
     color: black;
     margin-top: 5pt;
+    padding: 3pt;
   }
 
   #GitHub_link {
-    text-align: center;
-    margin-left: -100pt;
     font-size: 10pt;
     width: 100%;
-    position: absolute;
-   
+   margin-left: 25%;
   }
   
   .active {
