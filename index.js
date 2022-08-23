@@ -116,20 +116,10 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.
     navigator.geolocation.getCurrentPosition(displayPosition);
   }
   
-function showFarenheitTemperature(event){
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    celsiusLink.classList.remove("active");
-    farenheitLink.classList.add("active");
-    let fahrenheitTemp = (celsiusTemp*9)/5+32;
-    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
 
 function showCelsiusTemperature(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    celsiusLink.classList.add("active");
-    farenheitLink.classList.remove("active");
     temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
@@ -142,9 +132,6 @@ function showCelsiusTemperature(event){
   
   let currentButton = document.querySelector("#current-button");
   currentButton.addEventListener("click", getCurrentTemp);
-  
-  let farenheitLink = document.querySelector("#fahrenheit-link");
-  farenheitLink.addEventListener ("click", showFarenheitTemperature);
 
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener ("click", showCelsiusTemperature);
